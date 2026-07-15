@@ -1,0 +1,9 @@
+{
+  "source_rows": 421570,
+  "source_start": "2010-02-05",
+  "source_end": "2012-10-26",
+  "evaluation_year": 2012,
+  "evaluation_rows": 123905,
+  "plan_growth_rate": 0.03,
+  "selected_forecast_method": "Seasonal naive"
+}

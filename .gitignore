@@ -1,0 +1,7 @@
+data/processed/*.csv
+data/processed/*.parquet
+data/raw/*
+!data/raw/README.md
+excel/*.xlsx
+__pycache__/
+*.pyc
