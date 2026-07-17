@@ -3,5 +3,6 @@ data/processed/*.parquet
 data/raw/*
 !data/raw/README.md
 excel/*.xlsx
+!excel/Walmart_Retail_Planning_Model_Final.xlsx
 __pycache__/
 *.pyc

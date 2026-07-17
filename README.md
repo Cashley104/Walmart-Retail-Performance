@@ -1,10 +1,10 @@
 # Walmart Store Performance
 
-End-to-end retail analytics project using Python, SQL Server, Excel, and Power BI to compare actual sales with an independently created planning scenario and a time-aware forecast.
+End-to-end retail analytics project using Python, SQL Server, an interactive Excel planning model, and Power BI to compare actual sales with independently created scenarios and a time-aware forecast.
 
 ![Executive Summary dashboard](images/executive-summary.png)
 
-[View the four-page dashboard preview](documentation/Walmart_Store_Performance.pdf) | [Download the Power BI report](power-bi/Walmart_Store_Performance.pbix)
+[View the four-page dashboard preview](documentation/Walmart_Store_Performance.pdf) | [Download the Power BI report](power-bi/Walmart_Store_Performance.pbix) | [Download the Excel planning model](excel/Walmart_Retail_Planning_Model_Final.xlsx)
 
 > The 3% planning scenario is illustrative and does not represent Walmart's internal budget or targets.
 
@@ -26,6 +26,16 @@ The report contains four pages:
 | ![Store and department dashboard](images/store-department-performance.png) | ![Forecast dashboard](images/forecast-holiday-impact.png) |
 
 ![Methodology and data quality dashboard](images/methodology-data-quality.png)
+
+## Excel planning model
+
+The interactive workbook turns the reporting workflow into an auditable planning model. A dropdown switches between Base, Upside, and Downside scenarios, while formula-driven summaries update monthly, store, and department results. Reconciliation controls verify published totals, assumptions, scenario validity, and source completeness.
+
+![Excel executive summary](images/excel-executive-summary.png)
+
+| Scenario assumptions | Model checks and sources |
+| --- | --- |
+| ![Excel scenario assumptions](images/excel-assumptions.png) | ![Excel model checks and sources](images/excel-model-checks.png) |
 
 ## Key results
 
@@ -58,7 +68,7 @@ Power BI uses a star schema with `fact_weekly_sales` connected many-to-one to `d
 
 - **Python:** pandas, scikit-learn, feature engineering, forecasting, and validation
 - **SQL Server:** dimensional tables, reporting views, and reconciliation queries
-- **Excel:** independent control totals and reporting reconciliation
+- **Excel:** interactive scenario planning, variance analysis, reconciliation controls, and audit checks
 - **Power BI:** data model, DAX measures, interactive analysis, and dashboard design
 
 ## Repository structure
@@ -69,7 +79,7 @@ sql/             Database objects, reporting views, and validation queries
 documentation/   Requirements, metric definitions, findings, and PDF preview
 power-bi/        Final Power BI report
 images/          Exported dashboard pages
-excel/           Locally generated reconciliation workbook
+excel/           Final interactive planning and scenario workbook
 data/raw/        Source-file instructions
 data/processed/  Locally generated analytical outputs
 ```
@@ -80,6 +90,7 @@ data/processed/  Locally generated analytical outputs
 2. Install dependencies with `python -m pip install -r requirements.txt`.
 3. Run `python python/pipeline.py`.
 4. Run the SQL scripts in numerical order if using SQL Server.
-5. Open `power-bi/Walmart_Store_Performance.pbix` or rebuild from the generated CSV files.
+5. Open `excel/Walmart_Retail_Planning_Model_Final.xlsx` to test the Base, Upside, and Downside scenarios.
+6. Open `power-bi/Walmart_Store_Performance.pbix` or rebuild from the generated CSV files.
 
 The large generated fact and evaluation files are intentionally excluded from Git. They are recreated deterministically by the pipeline.
