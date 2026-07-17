@@ -4,7 +4,7 @@ End-to-end retail analytics project using Python, SQL Server, an interactive Exc
 
 ![Executive Summary dashboard](images/executive-summary.png)
 
-[View the four-page dashboard preview](documentation/Walmart_Store_Performance.pdf) | [Download the Power BI report](power-bi/Walmart_Store_Performance.pbix) | [Download the Excel planning model](excel/Walmart_Retail_Planning_Model_Final.xlsx)
+[View the Power BI preview](documentation/Walmart_Store_Performance.pdf) | [View the Excel model preview](documentation/Walmart_Excel_Model_Preview.pdf) | [Download the Power BI report](power-bi/Walmart_Store_Performance.pbix) | [Download the Excel planning model](excel/Walmart_Retail_Planning_Model_Final.xlsx)
 
 > The 3% planning scenario is illustrative and does not represent Walmart's internal budget or targets.
 
