@@ -76,7 +76,9 @@ def main() -> None:
     dim_store = pd.read_csv(PROCESSED_DIR / "dim_store.csv")
     dim_department = pd.read_csv(PROCESSED_DIR / "dim_department.csv")
     dim_date = pd.read_csv(PROCESSED_DIR / "dim_date.csv")
-    fact = pd.read_csv(PROCESSED_DIR / "fact_weekly_sales.csv")
+    fact = pd.read_csv(PROCESSED_DIR / "fact_weekly_sales.csv").rename(
+        columns={"Fuel_Price": "FuelPrice"}
+    )
 
     insert_dataframe(database, "DimStore", dim_store, ["Store", "StoreType", "StoreSize"])
     insert_dataframe(database, "DimDepartment", dim_department, ["Dept"])
@@ -91,7 +93,7 @@ def main() -> None:
         "FactWeeklySales",
         fact,
         [
-            "Store", "Dept", "Date", "DateKey", "ActualSales", "IsHoliday", "Temperature", "Fuel_Price",
+            "Store", "Dept", "Date", "DateKey", "ActualSales", "IsHoliday", "Temperature", "FuelPrice",
             "MarkDown1", "MarkDown2", "MarkDown3", "MarkDown4", "MarkDown5", "MarkDownTotal", "CPI",
             "Unemployment", "PlanSales", "ForecastSales", "ForecastMethod",
         ],
